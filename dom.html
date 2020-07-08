@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <title>
+            Javascript Example
+        </title>
+        <style>
+            form{
+            	background-color: lightgray;
+                display: flex;
+                flex-wrap: wrap;
+                padding-top: 10px;
+            }
+            .div1{
+                width: 35%;
+                margin: 10px;
+                padding: 20px;
+            }
+            
+            .txtpadding{
+                margin: 10px;
+                width: 90%;
+                padding: 11px;
+                /*height: 30px;*/
+            }
+            table{
+                
+                margin: 10px;
+                
+                color: red;
+            }
+            tr{
+                border: 15px solid lightgray;
+            }
+            th{
+            	background-color: lightgray;
+            	
+            }
+            .btn{
+            	margin: 10px;
+            	
+            }
+
+        </style>
+    </head>
+    <body>
+        <form>
+            <div class="div1">
+            <input class="txtpadding" type="text" name="name" id="name" placeholder="Enter the name"><br>
+            <input class="txtpadding" type="phone" name="phone" id="phone" placeholder="Enter the phone number."><br>
+            	<input class="txtpadding" type="email" name="email" id="email" placeholder="Enter the email address"><br>
+            <input class="txtpadding" type="text" name="address" id="address" placeholder="Enter the address"><br>
+            
+
+            <input type="radio" name="gender" value="Male" id="radio"><label name="Male">Male</label>
+            <input type="radio" name="gender" value="Female" id="radio"><label name="Male">Female</label><br>
+            <input style="margin-top: 10px;margin-left: 10px;" type="checkbox" name="c1" value="501" id="checkbox"><label name="c1">PHP</label>
+            <input style="margin-top: 10px;margin-left: 10px;" type="checkbox" name="c1" value="502" id="checkbox"><label name="c1">HTML</label>
+            <input style="margin-top: 10px;margin-left: 10px;" type="checkbox" name="c1" value="503" id="checkbox"><label name="c1">JAVA</label>
+            <div class="btn">
+            <button style="margin-left: 5%; border-radius: 10%; width: 100px; height: 40px;padding-top: 10px" type="button" onclick="addFunction()">Add</button>
+            </div>
+            </div>
+        </form>    
+            <table border="1" id="table" cellspacing="0" cellpadding="10">
+                <thead>
+                    <tr>
+                    <th>Name</th>
+                    <th>gender</th>
+                    <th>Subject</th>
+                    <th>PhoneNumber</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody id="table1">
+            	
+            </tbody>
+            </table>
+        <script>
+                
+                function addFunction(){
+                    var name=document.getElementById("name").value;
+                    var phone=document.getElementById("phone").value;
+                    var email=document.getElementById("email").value;
+                    var address=document.getElementById("address").value;
+                    var radio = document.getElementById("radio").value;
+                    var checkbox=document.getElementById("checkbox").value;
+
+                    var nameNode=document.createTextNode(name);
+                    var phoneNode=document.createTextNode(phone);
+                    var addressNode=document.createTextNode(address);
+                    var emailNode=document.createTextNode(email);
+                    var radioNode=document.createTextNode(radio);
+                    var checkboxNode=document.createTextNode(checkbox);
+
+	                var table=document.getElementById("table");
+	                var trow=document.createElement("tr");
+	                var tcol1=document.createElement("td");
+	                var tcol2=document.createElement("td");
+	                var tcol3=document.createElement("td");
+	                var tcol4=document.createElement("td");
+	                var tcol5=document.createElement("td");
+	                var tcol6=document.createElement("td");
+
+		            table.appendChild(trow);
+		            trow.appendChild(tcol1);
+		            trow.appendChild(tcol2);
+		            trow.appendChild(tcol3);
+		            trow.appendChild(tcol4);
+		            trow.appendChild(tcol5);
+		            trow.appendChild(tcol6);
+
+	                tcol1.appendChild(nameNode);  
+	                tcol2.appendChild(radioNode);
+	                tcol3.appendChild(checkboxNode);
+	                tcol4.appendChild(phoneNode);  
+	                tcol5.appendChild(emailNode);
+	                tcol6.appendChild(addressNode);  
+
+                }
+            
+        </script>    
+    
+</body>
+</html>
